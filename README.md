@@ -12,8 +12,13 @@ There's an SDK folder with sdk.py file, it's pretty much self explained just
 select a command and run it.
 
 ## Usage
-Please insert your credentials into the settings.py file under: `SENDGRID_API_KEY_PRODUCTION`
+Please add a new environment variable called `SENDGRID_API_KEY_PRODUCTION` to
+your bash.rc or one time to your terminal:
+```
+export SENDGRID_API_KEY_PRODUCTION='<your api key root key>'
+```
 
+## Example
 ```
 python main.py --dest_subaccount <subaccount_exact_name> --add_sendgrid_users fake@gmail.com
 ```
