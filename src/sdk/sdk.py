@@ -22,11 +22,13 @@ def add_sendgrid_users_to_subaccounts(emails, dest_subaccount, is_admin=False):
     subaccount = SendgridUser(True, impersonate_subuser=dest_subaccount)
 
     for email in emails:
+        if '+' not in email:
+            email = f"{email.split('@')[0]}+@{email.split('@')[1]}"
         try:
             logger.info('Starting to add user with email %s to subaccount %s', email,
                         dest_subaccount)
             subaccount.create_teammate(email, scopes=BASE_SCOPES, is_admin=is_admin)
             logger.info('Created user with email %s in subaccount %s', email, dest_subaccount)
-        except Exception as e:
+        except Exception:
             logger.error('Failed creating user with email %s in subaccount %s', email, dest_subaccount)
             continue
