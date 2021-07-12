@@ -1,6 +1,6 @@
 import logging
 
-from src.sendgrid_mail.base import SendGrid
+from src.sendgrid.base import SendGrid
 from src.utils.common import log_error
 
 logger = logging.getLogger(__name__)

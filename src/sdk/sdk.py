@@ -1,6 +1,6 @@
 import logging
 
-from src.sendgrid_mail.user import Teammate as SendgridUser
+from src.sendgrid.user import Teammate as SendgridUser
 from src.settings import BASE_SCOPES
 
 ID = 'id'
