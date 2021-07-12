@@ -19,11 +19,11 @@ def add_sendgrid_users_to_subaccounts(emails, dest_subaccount, is_admin=False):
     @type dest_subaccount: str
     @param dest_subaccount: destination subaccount
     """
-    subaccount = SendgridUser(True, impersonate_subuser=dest_subaccount)
+    subaccount = SendgridUser(impersonate_subuser=dest_subaccount)
 
     for email in emails:
         if '+' not in email:
-            email = f"{email.split('@')[0]}+@{email.split('@')[1]}"
+            email = f"{email.split('@')[0]}+{dest_subaccount}@{email.split('@')[1]}"
         try:
             logger.info('Starting to add user with email %s to subaccount %s', email,
                         dest_subaccount)
