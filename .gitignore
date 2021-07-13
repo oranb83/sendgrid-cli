@@ -131,8 +131,6 @@ dmypy.json
 # Mac
 .DS_store
 
-# Settings
-src/settings.py
 outputs/
 *templates.txt
 sendgrid_users.csv
