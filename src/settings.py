@@ -1,5 +1,6 @@
 import os
 
+
 SENDGRID_API_KEY_PRODUCTION = os.getenv('SENDGRID_API_KEY_PRODUCTION')
 BASE_SCOPES = [
     'access_settings.activity.read',

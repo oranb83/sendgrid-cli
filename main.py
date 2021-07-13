@@ -3,6 +3,14 @@ import argparse
 
 from src.sdk.sdk import *
 
+SUBACCOUNTS = [
+    'cross_platform',
+    'car_company',
+    'life_company',
+    'pet_company',
+    'home_company'
+]
+
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s-%(name)s - %(levelname)s - %(message)s',
@@ -21,6 +29,10 @@ class Main:
         self.add_sendgrid_users = args.add_sendgrid_users
 
     def run(self):
+        if self.dest_subaccount not in SUBACCOUNTS:
+            raise Exception(
+                f'Sub account {self.dest_subaccount} is illegal, please use one of these sub accounts: {SUBACCOUNTS}')
+
         return add_sendgrid_users_to_subaccounts(
             self.add_sendgrid_users, self.dest_subaccount)
 

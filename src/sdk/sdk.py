@@ -3,10 +3,6 @@ import logging
 from src.sendgrid.user import Teammate as SendgridUser
 from src.settings import BASE_SCOPES
 
-ID = 'id'
-SUBACCOUNTS = ['cross_platform', 'car_company', 'life_company', 'pet_company', 'home_company']
-SENGRID_TEMPLATES_MIGRATED_NAMES_FILE = 'templates_subaccounts_migrated_names.csv'
-
 logger = logging.getLogger(__name__)
 
 
